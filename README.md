@@ -57,6 +57,15 @@ Keep `setState()` tight and clean. Don’t put async operations or business logi
 # scaffold ? 
 - scaffold is like a layout shell for one screen|page inside the app.
 
+# Add image procedure
+- create a root folder asset => images => eg.image.png
+- pubspec.yaml => here, we're going to specify all the thigs that govern our application.
 
 
+# pubspec.yaml
+- heart of flutter project
+- Tells Flutter 
+  - what packages to fetch
+  - what assets to include (images, fonts, etc.)
+  - App name, version, environment(SDK version) 
 
