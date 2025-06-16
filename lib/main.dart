@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MyHomePage(),
+      home:
+          MyHomePage(), //! here we add the child widget ...home: is the entry screen of your app (like <App /> in React). You can plug in any custom widget here (e.g., HomePage(), LoginScreen(), etc.).
     );
   }
 }
@@ -77,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
     int fortune = random.nextInt(_fortuneList.length);
     setState(() {
       _currentFortune = _fortuneList[fortune];
+      print("StateChanged => $_currentFortune");
     });
-    print(_currentFortune);
   }
 
   // void _incrementCounter() {
@@ -89,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print("New Build with latest current_fortune :  $_currentFortune");
     return Scaffold(
       appBar: AppBar(),
       body: Center(
