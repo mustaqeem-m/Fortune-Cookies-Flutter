@@ -173,3 +173,39 @@ Its `build`() returns the UI. When `state changes, build() is called again` — 
 - values are computed at compile time , its make them highly efficient
 - predictable behaviour -> allows for consistent widget reuse behaviour
 - optimize widget rebuild -> avoid unnecessary widget rebuids, which is cruicial for smooth animation and responsiveness
+
+
+# Dart -> Inheritance 
+
+- OOP in flutter widget
+
+- Widget                <-- Base class for everything visible on screen
+|
+|-- StatelessWidget     <-- Immutable UI (doesn't change over time)
+|   |
+|   |-- Text("Hello")          <-- Basic text widget
+|   |-- Icon(Icons.add)        <-- Basic icon
+|   |-- Center(child: ...)     <-- Layout/Positioning widget
+|   |-- MyCustomStateless()    <-- Your custom stateless widget
+|
+|-- StatefulWidget       <-- Mutable UI (can change via setState)
+    |
+    |-- ElevatedButton(onPressed: ...)   <-- Has internal state like pressed/not pressed
+    |-- TextField(controller: ...)       <-- Tracks user input
+    |-- Slider(value: ...)               <-- Changes interactively
+    |-- MyCustomStateful()               <-- Your custom widget with mutable state
+
+
+# How widget is handles BTS
+ 
+- `Text`	Class name (Widget type)
+- "Hello"	`Constructor argument` (data to display)
+- Text("Hello")	Creates an `object of type Text` → `this object is a Widget`
+
+`Every Widget you use (like Text("Hi")) is an object of a Widget class.
+And every Widget class (like Text) creates objects when called.`
+
+- `Widget == Object of Widget Class `
+
+
+
