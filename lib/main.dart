@@ -4,8 +4,12 @@ import "package:provider/provider.dart";
 import 'package:fortune_cookie/Providers/FortuneModel.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => Fortunemodel(),
-  child: const MyApp()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Fortunemodel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
   // final int _counter = 0;
   final String _currentFortune = "";
 
-
   // void _incrementCounter() {
   //   setState(() {
   //     _counter++;
@@ -42,9 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final fortune = Provider.of<Fortunemodel>(
-      context,
-    );
+    final fortune = Provider.of<Fortunemodel>(context);
     // print("New Build with latest current_fortune :  $_currentFortune");
     return Scaffold(
       appBar: AppBar(),
